@@ -1,0 +1,59 @@
+
+.btn-ss-con {
+  width: 800px;
+  height: 70px;
+  margin: 20px auto;
+  display: flex;
+  user-select: none;
+}
+#btn-ss {
+  width: 300px;
+  height: 50px;
+  margin: auto;
+  border: 1.5px solid rgb(0, 0, 0);
+  text-align: center;
+  color: rgb(19, 13, 13);
+  text-align: center;
+  font-size: 33px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+  transition: ease-in-out 50ms;
+  background-color: rgb(160, 160, 160);
+}
+#btn-ss:hover {
+  transform: scale(1.05);
+}
+#slider {
+  width: 600px;
+  height: 400px;
+  margin: 150px auto 0 auto;
+  overflow: hidden;
+  border: solid 3px rgb(0, 0, 0);
+}
+.slides > img {
+  width: 800px;
+}
+.slides {
+  display: flex;
+  transition: ease-in-out 1.5s;
+}
+.slider-buttons-con {
+  width: 800px;
+  height: 50px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-evenly;
+  user-select: none;
+}
+.slider-buttons-con > div {
+  width: 100px;
+  height: 50px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 35px;
+  cursor: pointer;
+  transition: ease-in-out 40ms;
+}
+.slider-buttons-con > div:hover {
+  transform: scale(1.10);
+}
