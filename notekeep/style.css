@@ -1,0 +1,17 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  /* Reguła dla komórki z kolorem notatki */
+  td.note-color {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }

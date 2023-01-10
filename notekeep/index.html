@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotePocket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="note-form">
+        <label for="title">Tytuł:</label>
+        <input type="text" id="title" name="title">
+      
+        <label for="content">Treść:</label>
+        <textarea id="content" name="content"></textarea>
+      
+        <label for="color">Kolor:</label>
+        <input type="color" id="color" name="color">
+      
+        <label for="pinned">Przypięty:</label>
+        <input type="checkbox" id="pinned" name="pinned">
+      
+        <input type="submit" value="Utwórz notatkę">
+      </form>
+
+      <table id="notes-table">
+        <thead>
+          <tr>
+            <th>Tytuł</th>
+            <th>Treść</th>
+            <th>Kolor</th>
+            <th>Przypięty</th>
+            <th>Data utworzenia</th>
+            <th>Akcje</th>
+          </tr>
+        </thead>
+        <tbody id="notes-tbody">
+          <!-- Notatki będą dodawane dynamicznie przez JavaScript -->
+        </tbody>
+      </table>
+  
+    <script src="main.js"></script>
+</body> 
+</html>
