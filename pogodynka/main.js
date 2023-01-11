@@ -1,4 +1,4 @@
-const apiKey = "c4885943eadf9be6247d524937f10a59";
+const apiKey = "373f563287e23e498695e63b46837990";
 
 function submitForm() {
   const location = document.getElementById("search").value;

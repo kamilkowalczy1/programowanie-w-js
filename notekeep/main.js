@@ -1,6 +1,6 @@
 const form = document.getElementById('note-form');
 const tableBody = document.getElementById('notes-tbody');
-  
+
 let notes = JSON.parse(localStorage.getItem('notes')) || [];
 
 function renderTable() {
@@ -16,19 +16,25 @@ function renderTable() {
       <td>${note.pinned ? 'Tak' : 'Nie'}</td>
       <td>${note.date}</td>
       <td>
-      <button class="edit-btn">Edytuj</button>
+      <button class="edit-btn" data-index="${index}">Edytuj</button>
       <button class="delete-btn" data-index="${index}">Usuń</button>
       </td>
     `;
     tableBody.appendChild(row);
   });
 
-  // Znajdrz przysciski usun
+  // Znajdz przysciski usun
   const deleteButtons = tableBody.querySelectorAll('.delete-btn');
   
   // dodaj wydarzenie na przycisk
   deleteButtons.forEach(button => {
     button.addEventListener('click', deleteNote);
+  });
+  const editButtons = tableBody.querySelectorAll('.edit-btn');
+  
+  // dodaj wydarzenie na przycisk
+  editButtons.forEach(button => {
+      button.addEventListener('click', editNote);
   });
 }
 
@@ -50,10 +56,6 @@ function saveNote(event) {
 
 form.addEventListener('submit', saveNote);
 
-function editNote(event) {
-  event.preventDefault();
-  // TODO: implementacja edycji notatki
-}
 
 function deleteNote(event) {
     event.preventDefault();
@@ -67,6 +69,30 @@ function deleteNote(event) {
     // Zapisanie tablicy w localStorage
     localStorage.setItem('notes', JSON.stringify(notes));
   
+    // Renderowanie tabeli z notatkami
+    renderTable();
+  }
+
+
+  function editNote(event) {
+    event.preventDefault();
+    // Pobranie indeksu notatki z tablicy na podstawie atrybutu data-index przycisku
+    const index = event.target.dataset.index;
+    console.log(index)
+    
+    //pobieranie elementów z formularza
+    const title = form.title.value;
+    const content = form.content.value;
+    const color = form.color.value;
+    const pinned = form.pinned.checked;
+    const date = notes[index].date;
+    
+    //edycja notatki na podstawie indeksu
+    notes[index] = { title, content, color, pinned, date };
+    
+    // Zapisanie tablicy w localStorage
+    localStorage.setItem('notes', JSON.stringify(notes));
+    
     // Renderowanie tabeli z notatkami
     renderTable();
   }
