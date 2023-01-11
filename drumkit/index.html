@@ -18,6 +18,33 @@
         <div class="box">8 tink</div>
         <div class="box">9 tom</div>
       </div>
+      <br>
+      <br>
+    <center><audio id="channel1"></audio>
+    Kanał 1
+    <button id="channel1-record-button" onclick="setRecording(1)">Nagraj</button> 
+    <button id="channel1-play-button" onclick ="playBack(1)">Odtwórz</button> </br></br>
+
+    Kanał 2 
+    <audio id="channel2"></audio>
+    <button id="channel2-record-button"onclick="setRecording(2)">Nagraj</button>
+    <button id="channel2-play-button"onclick ="playBack(2)">Odtwórz</button></br></br>
+
+    Kanał 3
+    <audio id="channel3"></audio>
+    <button id="channel3-record-button"onclick="setRecording(3)">Nagraj</button>
+    <button id="channel3-play-button"onclick ="playBack(3)">Odtwórz</button></br></br>
+
+    Kanał 4 
+    <audio id="channel4"></audio>
+    <button id="channel4-record-button"onclick="setRecording(4)">Nagraj</button>
+    <button id="channel4-play-button"onclick ="playBack(4)">Odtwórz</button></br></br>
+
+    Odtwarzanie wszystkiego na raz
+    <button id="all-play-button"onclick ="playAll()">Odtwórz wszystko</button>
+    <button id="stopPlay"onclick ="stopPlay()">Zatrzymaj odtwarzanie</button>
+   </center>
+
     <script src="drumkit.js"></script>
 </body> 
 </html>

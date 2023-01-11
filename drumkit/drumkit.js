@@ -6,6 +6,7 @@ document.addEventListener('keypress', (event) => {
     startRecording(event.key);
 });
 
+//case od 1 - 9 przypisanie dzwieku
 function playSound(key) {
     switch (key) {
         case '1':
@@ -56,10 +57,63 @@ function playSound(key) {
             console.log(key);
     }
 }
-function startRecording(key) {
-    if (key == ' ') {
-        // space 
-        btnStartRecording.style.boxShadow = "0 0 10px 1px white";
 
+let track1 = [];
+let track2 = [];
+let track3 = [];
+let track4 = [];
+
+
+//nagrywanie
+function record(event) {
+    if (!recording) return;
+    const sound = {
+        key: event.key,
+        time: Date.now()
+    };
+   const trackName = eval("track"+ trackNumber);
+    trackName.push(sound);
+    console.log(track1)
+}
+function setRecording(number) {
+    recording = true;
+    if (number) {
+        trackNumber = number;
     }
 }
+window.addEventListener('keypress', record);
+
+//odtwarzanie
+function playBack(number){
+let pauseTime;
+const trackName = eval("track"+ number);
+trackName.forEach(element => {
+    if (element === trackName[0]) {
+        pauseTime = element.time;   
+    }
+    if (element.key) {
+        setTimeout(() => {
+            playSound(element.key);
+        }, element.time - pauseTime);
+    }
+console.log(pauseTime)
+});
+
+
+}
+
+// Odtworzenie wszystkich kanałów na raz
+function playAll(){
+    playBack(1);
+    playBack(2);
+    playBack(3);
+    playBack(4);
+}
+
+//function startRecording(key) {
+//    if (key == ' ') {
+        // space 
+ //       btnStartRecording.style.boxShadow = "0 0 10px 1px white";
+
+   // }
+//}
