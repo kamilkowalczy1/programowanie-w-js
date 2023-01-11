@@ -51,6 +51,7 @@ function saveNote(event) {
 form.addEventListener('submit', saveNote);
 
 function editNote(event) {
+  event.preventDefault();
   // TODO: implementacja edycji notatki
 }
 

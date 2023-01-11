@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pogodynka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <p>Wprowadź nazwę miejscowości</p>
+     <form id="add">
+         <input type="text" id="search" placeholder="Search By Location" autocomplete="on">
+        <button>Dodaj</button>
+    </form>
+    <main id="main">
+         <table id="weather-data">
+            <thead>
+                 <tr>
+                    <th>Lokalizacja</th>
+                    <th>Tempreatura</th>
+                    <th>Wilgotność</th>
+                    <th>Pogoda</th>
+                </tr>
+            </thead>
+             <tbody id="data">
+                    <!-- wyświetlanie wierszy z danymi -->
+            </tbody>
+        </table>
+     </main>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
