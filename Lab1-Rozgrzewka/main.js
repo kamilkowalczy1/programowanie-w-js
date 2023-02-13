@@ -10,8 +10,12 @@ const max = document.querySelector('#max');
 
 const przeliczBtn = document.querySelector('#przelicz')
 przeliczBtn.addEventListener('click', () => {
+    //suma
     suma.value = parseInt(liczba1.value) + parseInt(liczba2.value) + parseInt(liczba3.value) + parseInt(liczba4.value)
+    //średnia
     srednia.value = (parseInt(liczba1.value) + parseInt(liczba2.value) + parseInt(liczba3.value) + parseInt(liczba4.value)) / 4
+    //min
     min.value = Math.min(parseInt(liczba1.value), parseInt(liczba2.value), parseInt(liczba3.value), parseInt(liczba4.value))
+    //max
     max.value = Math.max(parseInt(liczba1.value), parseInt(liczba2.value), parseInt(liczba3.value), parseInt(liczba4.value))
 })
