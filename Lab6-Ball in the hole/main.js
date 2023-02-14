@@ -14,19 +14,19 @@ function animate() {
    if (parseInt(ballElement.style.left) + velocityX < 0 || parseInt(ballElement.style.left) + velocityX > window.innerWidth - 50) {
      ballElement.style.left = `${parseInt(ballElement.style.left)}px`;
    } else {
-     ballElement.style.left = `${parseInt(ballElement.style.left) + velocityX}px`;
+     ballElement.style.left = `${parseInt(ballElement.style.left) + velocityX/10}px`;
    }
    if (parseInt(ballElement.style.top) + velocityY < 0 || parseInt(ballElement.style.top) + velocityY > window.innerHeight - 50) {
      ballElement.style.top = `${parseInt(ballElement.style.top)}px`;
    } else {
-     ballElement.style.top = `${parseInt(ballElement.style.top) + velocityY}px`;
+     ballElement.style.top = `${parseInt(ballElement.style.top) + velocityY/10}px`;
    }
  
    // Czy kula dotarła do granic ekranu
    if (parseInt(ballElement.style.left) < 0 || parseInt(ballElement.style.left) > window.innerWidth - 50) {
-    velocityX = -velocityX;
+   velocityX = -velocityX;
    }
-    if (parseInt(ballElement.style.top) < 0 || parseInt(ballElement.style.top) > window.innerHeight - 50) {
+  if (parseInt(ballElement.style.top) < 0 || parseInt(ballElement.style.top) > window.innerHeight - 50) {
      velocityY = -velocityY;
    }
  
@@ -53,5 +53,5 @@ function isOverlapping(element1, element2) {
 }
 window.addEventListener("deviceorientation", (e) => {
  velocityX = e.gamma || 0;
- velocityY = (90 - (e.beta || 90))
+ velocityY = -1*(90 - (e.beta || 90))
 })

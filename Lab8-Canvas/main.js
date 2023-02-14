@@ -27,11 +27,15 @@ class Circle {
 
   update() {
     this.draw(context);
+
     //linie do innych kółek, jeśli są blisko
+
     for (let i = 0; i < all_circles.length; i++) {
       let otherCircle = all_circles[i];
       if (this !== otherCircle) {
+
         // usuwanie linii do samego siebie
+
         let distance = getDistance(
           this.position_x,
           this.position_y,
@@ -39,7 +43,9 @@ class Circle {
           otherCircle.position_y
         );
         if (distance < 200) {
+
           // linie, jeśli odległość jest mniejsza niż 200
+          
           context.beginPath();
           context.moveTo(this.position_x, this.position_y);
           context.lineTo(otherCircle.position_x, otherCircle.position_y);

@@ -3,6 +3,9 @@ const tableBody = document.getElementById('notes-tbody');
 
 let notes = JSON.parse(localStorage.getItem('notes')) || [];
 
+//sortowanie przypięcia 
+
+
 function renderTable() {
   notes.sort((a, b) => (a.pinned === b.pinned) ? 0 : a.pinned ? -1 : 1);
   tableBody.innerHTML = '';
@@ -30,6 +33,9 @@ function renderTable() {
   deleteButtons.forEach(button => {
     button.addEventListener('click', deleteNote);
   });
+
+
+
   const editButtons = tableBody.querySelectorAll('.edit-btn');
   
   // dodaj wydarzenie na przycisk
@@ -37,6 +43,8 @@ function renderTable() {
       button.addEventListener('click', editNote);
   });
 }
+
+// Tworzenie Notatki
 
 function saveNote(event) {
   event.preventDefault();
@@ -49,7 +57,10 @@ function saveNote(event) {
 
   const note = { title, content, color, pinned, date };
 
+//dodawanie do tablicy 
   notes.push(note);
+
+  //zapisywanie do localstorage
   localStorage.setItem('notes', JSON.stringify(notes));
   renderTable();
 }

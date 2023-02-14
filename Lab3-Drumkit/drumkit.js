@@ -58,13 +58,14 @@ function playSound(key) {
     }
 }
 
+
 let track1 = [];
 let track2 = [];
 let track3 = [];
 let track4 = [];
 
 
-//nagrywanie
+//rozpoczęcie nagrywania
 function record(event) {
     if (!recording) return;
     const sound = {
@@ -83,7 +84,7 @@ function setRecording(number) {
 }
 window.addEventListener('keypress', record);
 
-//odtwarzanie
+//odtwarzanie zapisanego nagrania
 function playBack(number){
 let pauseTime;
 const trackName = eval("track"+ number);
@@ -99,11 +100,11 @@ trackName.forEach(element => {
 console.log(pauseTime)
 });
 
-
 }
 
 // Odtworzenie wszystkich kanałów na raz
-function playAll(){
+function playAll()
+{
     playBack(1);
     playBack(2);
     playBack(3);
